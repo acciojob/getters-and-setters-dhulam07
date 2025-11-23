@@ -1,36 +1,51 @@
 //complete this code
 class Person {
-	constructor(name,age){
-		this.name=name;
-		this.age=age;
-	}
-	get Name(){
-		return this.name;
-		//console.log(person.name);
-	}
-	set Age(age){
-		this.age=age;
-		//console.log(person.age); 
-	}
-	const person = new Person("John", 25);
+  constructor(name, age) {
+    this._name = name;
+    this._age = age;
+  }
 
+  get name() {
+    return this._name;
+  }
+
+  set name(name) {
+    this._name = name;
+  }
+
+  get age() {
+    return this._age;
+  }
+
+  set age(age) {
+    this._age = age;
+  }
 }
 
 class Student extends Person {
-	 study(){
-		console.log(`${this.name} is studying`)
-	}
-	const student = new Student("Alice", 22);
-	student.study(); 
+  study() {
+    console.log(`${this.name} is studying`);
+  }
 }
 
 class Teacher extends Person {
-	 teach(){
-		console.log(`${this.name} is teaching`)
-	}
-	const teacher = new Teacher("Bob", 40);
-	teacher.teach(); 
+  teach() {
+    console.log(`${this.name} is teaching`);
+  }
 }
+
+// Example usage:
+const person = new Person("John", 25);
+console.log(person.name);  // John
+person.age = 30;
+console.log(person.age);   // 30
+
+const student = new Student("Alice", 22);
+student.study();            // Alice is studying
+
+const teacher = new Teacher("Bob", 40);
+teacher.teach();            // Bob is teaching
+
 
 // Do not change the code below this line
 window.Person = Person;
